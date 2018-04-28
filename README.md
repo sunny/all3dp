@@ -1,39 +1,55 @@
-# All3dp
+# All3DP
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/all3dp`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Ruby gem to send 3D files to the All3DP API.
 
 ## Installation
 
-Add this line to your application's Gemfile:
+Add these line to your application's Gemfile:
 
-```ruby
-gem 'all3dp'
+```rb
+# Send 3D files to the All3DP API.
+gem "all3dp", git: "https://github.com/sunny/all3dp"
 ```
 
 And then execute:
 
     $ bundle
 
-Or install it yourself as:
-
-    $ gem install all3dp
-
 ## Usage
 
-TODO: Write usage instructions here
+```rb
+result = All3DP::API.new.create_configuration(
+  items: [{ modelUrl: "http://example.org/file.stl" }]
+)
+result["configurationId"] # => "some-configuration-id"
+```
 
 ## Development
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+After checking out the repo, run `bin/setup` to install dependencies. Then,
+run `rake` to run the tests and linter. You can also run `bin/console` for an
+interactive prompt that will allow you to experiment.
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+## Release
+
+To release a new version, update the version number in `version.rb`,
+and then run `bundle exec rake release`, which will create a git tag
+for the version, push git commits and tags, and push the `.gem` file
+to [rubygems.org](https://rubygems.org).
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/all3dp. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at
+https://github.com/sunny/all3dp. This project is intended to be a safe,
+welcoming space for collaboration, and contributors are expected to adhere
+to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 ## Code of Conduct
 
-Everyone interacting in the All3dp project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/all3dp/blob/master/CODE_OF_CONDUCT.md).
+Everyone interacting in the All3dp project’s codebases, issue trackers,
+chat rooms and mailing lists is expected to follow the
+[code of conduct](https://github.com/sunny/all3dp/blob/master/CODE_OF_CONDUCT.md).
+
+## License
+
+Licensed under the MIT License.
