@@ -1,5 +1,3 @@
-require "all3dp/version"
+# frozen_string_literal: true
 
-module All3dp
-  # Your code goes here...
-end
+require "all3dp/version"
