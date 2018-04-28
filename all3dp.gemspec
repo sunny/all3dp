@@ -7,7 +7,7 @@ require "all3dp/version"
 
 Gem::Specification.new do |spec|
   spec.name = "all3dp"
-  spec.version = All3dp::VERSION
+  spec.version = All3DP::VERSION
   spec.authors = ["Sunny Ripert"]
   spec.email = ["sunny@sunfox.org"]
 
