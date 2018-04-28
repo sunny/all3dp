@@ -1,0 +1,45 @@
+AllCops:
+  TargetRubyVersion: 2.4
+
+Style/StringLiterals:
+  EnforcedStyle: double_quotes
+
+Gemspec/OrderedDependencies:
+  Enabled: false
+
+Style/TrailingCommaInArrayLiteral:
+  EnforcedStyleForMultiline: consistent_comma
+
+Style/TrailingCommaInHashLiteral:
+  EnforcedStyleForMultiline: consistent_comma
+
+Style/TrailingCommaInArguments:
+  EnforcedStyleForMultiline: consistent_comma
+
+Style/BlockDelimiters:
+  EnforcedStyle: semantic
+  FunctionalMethods:
+    - before
+    - let
+    - let!
+    - subject
+    - watch
+    - expect
+    - git_source
+
+  EnforcedStyleForMultiline: consistent_comma
+
+Style/BlockDelimiters:
+  EnforcedStyle: semantic
+  FunctionalMethods:
+    - before
+    - let
+    - let!
+    - subject
+    - watch
+    - expect
+    - git_source
+
+Metrics/BlockLength:
+  Exclude:
+    - spec/**/*
