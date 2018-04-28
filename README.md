@@ -19,7 +19,7 @@ And then execute:
 
 ```rb
 result = All3DP::API.new.create_configuration(
-  items: [{ modelUrl: "http://example.org/file.stl" }]
+  items: [{ modelUrl: "http://wtf.sunfox.org/cults-logo.stl" }]
 )
 result["configurationId"] # => "some-configuration-id"
 ```
