@@ -8,7 +8,7 @@ Add these line to your application's Gemfile:
 
 ```rb
 # Send 3D files to the All3DP API.
-gem "all3dp", git: "https://github.com/sunny/all3dp"
+gem "all3dp"
 ```
 
 And then execute:
