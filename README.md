@@ -17,12 +17,16 @@ And then execute:
 
 ## Usage
 
+Give URLs of STL files to the API:
+
 ```rb
-result = All3DP::API.new.create_configuration(
-  items: [{ modelUrl: "http://wtf.sunfox.org/cults-logo.stl" }]
+configuration = All3DP::API.Configuration.create(
+  model_urls: ["http://wtf.sunfox.org/cults-logo.stl"],
 )
-result["configurationId"] # => "some-configuration-id"
+configuration.url # => "https://print.all3dp.com/configuration/f00b4r…"
 ```
+
+You can then redirect your users to the given URL.
 
 ## Development
 
