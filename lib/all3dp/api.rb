@@ -13,7 +13,9 @@ module All3DP
         json: { items: items },
       )
 
-      raise Error, response.body.to_s.inspect if response.code != 201
+      if response.code != 201
+        raise Error, "Error #{response.code}: #{response.body.to_s.inspect}"
+      end
 
       response.parse
     end
