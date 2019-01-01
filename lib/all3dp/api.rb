@@ -4,6 +4,7 @@ module All3DP
   # Handle all calls to the API.
   class API
     class Error < StandardError; end
+    class BadGatewayError < Error; end
 
     def create_configuration(items:)
       url = "#{BASE_URL}/configuration"
@@ -13,16 +14,23 @@ module All3DP
         json: { items: items },
       )
 
-      if response.code != 201
-        raise Error, "Error #{response.code}: #{response.body.to_s.inspect}"
-      end
-
-      response.parse
+      parse_response(response)
     end
 
-    # private
+    private
 
     BASE_URL = "https://printing-engine.all3dp.com"
     private_constant :BASE_URL
+
+    def parse_response(response)
+      case response.code
+      when 201
+        response.parse
+      when 502
+        raise BadGatewayError, response.body.to_s.strip
+      else
+        raise Error, "Error #{response.code}: #{response.body.to_s.inspect}"
+      end
+    end
   end
 end

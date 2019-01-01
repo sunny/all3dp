@@ -1,6 +1,11 @@
+# unreleased
+
+Features:
+- Raise a `All3DP::API::BadGatewayError` on 502s
+
 # 0.1.1
 
-Patches:
+Patch:
 - Add response code to API errors
 
 # 0.1.0
