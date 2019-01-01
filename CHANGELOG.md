@@ -1,6 +1,8 @@
 # unreleased
 
-Features:
+# 0.1.2
+
+Feature:
 - Raise a `All3DP::API::BadGatewayError` on 502s
 
 # 0.1.1
