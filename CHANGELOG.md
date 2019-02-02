@@ -1,5 +1,7 @@
 # unreleased
 
+# 0.1.3
+
 Feature:
 - Raise a `All3DP::API::GatewayTimeoutError` on 504s
 
