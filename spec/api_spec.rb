@@ -47,6 +47,15 @@ RSpec.describe All3DP::API do
       end
     end
 
+    context "when 504" do
+      it "raises an exception" do
+        stub_request(:post, "https://printing-engine.all3dp.com/configuration")
+          .to_return(status: 504, body: "")
+
+        expect { result }.to raise_error(All3DP::API::GatewayTimeoutError, "")
+      end
+    end
+
     context "when unknown status code" do
       let(:status_code) { 432 }
       let(:body) { "meh" }
