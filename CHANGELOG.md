@@ -1,5 +1,7 @@
 # unreleased
 
+# 0.1.4
+
 Feature:
 - Raise a `All3DP::API::ServiceUnavailableError` on 503s
 
