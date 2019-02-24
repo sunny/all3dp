@@ -47,6 +47,16 @@ RSpec.describe All3DP::API do
       end
     end
 
+    context "when 503" do
+      it "raises an exception" do
+        stub_request(:post, "https://printing-engine.all3dp.com/configuration")
+          .to_return(status: 503, body: "")
+
+        expect { result }
+          .to raise_error(All3DP::API::ServiceUnavailableError, "")
+      end
+    end
+
     context "when 504" do
       it "raises an exception" do
         stub_request(:post, "https://printing-engine.all3dp.com/configuration")
