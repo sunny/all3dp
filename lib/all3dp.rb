@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
-require "http"
+require "net/http"
+require "uri"
+require "json"
 
 require "all3dp/version"
 require "all3dp/api"

@@ -9,14 +9,10 @@ module All3DP
     class ServiceUnavailableError < Error; end
 
     def create_configuration(items:)
-      url = "#{BASE_URL}/configuration"
-      response = HTTP.post(
-        url,
-        headers: { "use-model-urls" => true },
-        json: { items: items },
-      )
+      json = { items: items }
+      response = json_post("#{BASE_URL}/configuration", json)
 
-      parse_response(response)
+      JSON.parse(response_body(response))
     end
 
     private
@@ -24,21 +20,29 @@ module All3DP
     BASE_URL = "https://printing-engine.all3dp.com"
     private_constant :BASE_URL
 
-    # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
-    def parse_response(response)
+    def response_body(response)
+      body = response.body.to_s.strip
+
       case response.code
-      when 201
-        response.parse
-      when 502
-        raise BadGatewayError, response.body.to_s.strip
-      when 503
-        raise ServiceUnavailableError, response.body.to_s.strip
-      when 504
-        raise GatewayTimeoutError, response.body.to_s.strip
-      else
-        raise Error, "Error #{response.code}: #{response.body.to_s.inspect}"
+      when "201" then body
+      when "502" then raise BadGatewayError, body
+      when "503" then raise ServiceUnavailableError, body
+      when "504" then raise GatewayTimeoutError, body
+      else raise Error, "Error #{response.code}: #{body.inspect}"
       end
     end
-    # rubocop:enable Metrics/AbcSize, Metrics/MethodLength
+
+    def json_post(url, json)
+      uri = URI.parse(url)
+      request = Net::HTTP::Post.new(uri)
+      request.content_type = "application/json; charset=UTF-8"
+      request["use-model-urls"] = "true"
+      request.body = JSON.dump(json)
+      req_options = { use_ssl: uri.scheme == "https" }
+
+      Net::HTTP.start(uri.hostname, uri.port, req_options) do |http|
+        http.request(request)
+      end
+    end
   end
 end
