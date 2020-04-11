@@ -27,19 +27,21 @@ Style/BlockDelimiters:
     - expect
     - git_source
 
-  EnforcedStyleForMultiline: consistent_comma
-
-Style/BlockDelimiters:
-  EnforcedStyle: semantic
-  FunctionalMethods:
-    - before
-    - let
-    - let!
-    - subject
-    - watch
-    - expect
-    - git_source
-
 Metrics/BlockLength:
   Exclude:
     - spec/**/*
+
+Lint/RaiseException:
+  Enabled: true
+
+Lint/StructNewOverride:
+  Enabled: true
+
+Style/HashEachMethods:
+  Enabled: true
+
+Style/HashTransformKeys:
+  Enabled: true
+
+Style/HashTransformValues:
+  Enabled: true
