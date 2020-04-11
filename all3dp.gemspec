@@ -29,5 +29,4 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "webmock", "~> 3.6"
   spec.add_development_dependency "rubocop", "~> 0.55"
   spec.add_development_dependency "httplog", "~> 1.0"
-  spec.add_development_dependency "pry", "~> 0.11"
 end

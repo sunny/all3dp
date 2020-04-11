@@ -11,7 +11,3 @@ HttpLog.configure do |config|
   config.log_headers = true
   config.color = { color: :yellow }
 end
-
-# Start console
-require "pry"
-Pry.start
