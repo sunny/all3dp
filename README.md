@@ -13,7 +13,7 @@ Add these line to your application's Gemfile:
 gem "all3dp"
 ```
 
-And then execute:
+And then call:
 
 ```sh
 $ bundle
