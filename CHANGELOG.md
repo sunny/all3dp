@@ -1,5 +1,8 @@
 # unreleased
 
+Feature:
+- Use the new `api.craftcloud3d.com` endpoint.
+
 Fix:
 - Drop `http` gem dependency.
 

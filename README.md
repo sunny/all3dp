@@ -1,7 +1,7 @@
 # All3DP
 
 Ruby gem to send 3D files to All3DP's
-[Craftcloud](https://craftcloud.all3dp.com/) 3D Printing Price Comparison
+[Craftcloud](https://craftcloud3d.com/) 3D Printing Price Comparison
 Service API.
 
 ## Installation

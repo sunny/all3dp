@@ -17,7 +17,7 @@ module All3DP
 
     private
 
-    BASE_URL = "https://printing-engine.all3dp.com"
+    BASE_URL = "https://api.craftcloud3d.com"
     private_constant :BASE_URL
 
     def response_body(response)
