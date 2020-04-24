@@ -1,5 +1,7 @@
 # unreleased
 
+# v1.0.1
+
 Fix:
 - Update configuration links to `app.craftcloud3d.com`.
 
