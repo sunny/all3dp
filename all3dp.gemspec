@@ -10,8 +10,8 @@ Gem::Specification.new do |spec|
   spec.authors = ["Sunny Ripert"]
   spec.email = ["sunny@sunfox.org"]
 
-  spec.summary = "Access All3DP's API"
-  spec.description = "Send 3D files to the All3DP API"
+  spec.summary = "Access Craftcloud's API"
+  spec.description = "Send 3D files to All3DP's Craftcloud API"
   spec.homepage = "http://github.com/sunny/all3dp"
 
   spec.files = `git ls-files -z`.split("\x0").reject { |f|

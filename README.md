@@ -32,7 +32,7 @@ configuration = All3DP::Configuration.create(
 You can then redirect your users to the given URL:
 
 ```rb
-configuration.url # => "https://print.all3dp.com/configuration/f00b4r…"
+configuration.url # => "https://app.craftcloud3d.com/configuration/f00b4r…"
 ```
 
 ## Development

@@ -22,7 +22,7 @@ RSpec.describe All3DP::Configuration do
 
       expect(subject.id).to eq("some-configuration-id")
       expect(subject.url).to eq(
-        "https://print.all3dp.com/configuration/some-configuration-id",
+        "https://app.craftcloud3d.com/configuration/some-configuration-id",
       )
     end
   end

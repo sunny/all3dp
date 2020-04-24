@@ -10,7 +10,7 @@ module All3DP
     end
 
     def url
-      "https://print.all3dp.com/configuration/#{id}"
+      "https://app.craftcloud3d.com/configuration/#{id}"
     end
 
     def self.create(model_urls:)
