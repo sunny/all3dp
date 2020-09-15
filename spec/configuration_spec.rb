@@ -6,7 +6,7 @@ RSpec.describe All3DP::Configuration do
     let(:model_urls) { ["http://example.org/file.stl"] }
 
     it "returns a Configuration" do
-      stub_request(:post, "https://api.craftcloud3d.com/v4/configuration")
+      stub_request(:post, "https://api.craftcloud3d.com/configuration")
         .with(
           body: '{"items":[{"modelUrl":"http://example.org/file.stl"}]}',
           headers: {
