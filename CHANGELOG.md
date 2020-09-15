@@ -1,5 +1,8 @@
 # unreleased
 
+Feature:
+- Move to the versionned API urls at `v4`.
+
 # v1.0.1
 
 Fix:
