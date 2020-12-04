@@ -4,8 +4,11 @@ module All3DP
   # Handle all calls to the API.
   class API
     class Error < StandardError; end
+
     class BadGatewayError < Error; end
+
     class GatewayTimeoutError < Error; end
+
     class ServiceUnavailableError < Error; end
 
     def create_configuration(items:)
