@@ -12,7 +12,7 @@ Gem::Specification.new do |spec|
 
   spec.summary = "Access Craftcloud's API"
   spec.description = "Send 3D files to All3DP's Craftcloud API"
-  spec.homepage = "http://github.com/sunny/all3dp"
+  spec.homepage = "http://github.com/cults/all3dp"
 
   spec.files = `git ls-files -z`.split("\x0").reject { |f|
     f.match(%r{^(test|spec|features)/})

@@ -45,7 +45,7 @@ interactive prompt that will allow you to experiment with the API.
 
 To release a new version, update the version number in `version.rb`, update
 the `CHANGELOG.md`, commit with a message like "v42.0.0", and then run
-`bundle exec rake release`, which will create a git tag for the version,
+`bin/rake release`, which will create a git tag for the version,
 push git commits and tags, and push the gem to
 [rubygems.org](https://rubygems.org).
 

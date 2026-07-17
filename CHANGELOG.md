@@ -1,7 +1,12 @@
 # unreleased
 
+# v2.0.0
+
 Feature:
 - Use the new `customer-api.craftcloud3d.com` endpoint.
+
+Breaking changes:
+- Drop Ruby 2 support
 
 # v1.0.1
 
