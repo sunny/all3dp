@@ -11,6 +11,7 @@ RSpec.describe All3DP::API do
         ],
       )
     }
+
     it "returns a response" do
       stub_request(:post, "https://api.craftcloud3d.com/configuration")
         .with(
@@ -32,10 +33,10 @@ RSpec.describe All3DP::API do
     context "when 502" do
       let(:body) {
         "<html>\r\n<head><title>502 Bad Gateway</title></head>\r\n" \
-        "<body bgcolor=\"white\">\r\n" \
-        "<center><h1>502 Bad Gateway</h1></center>\r\n" \
-        "<hr><center>nginx/1.12.1</center>\r\n" \
-        "</body>\r\n</html>\r\n"
+          "<body bgcolor=\"white\">\r\n" \
+          "<center><h1>502 Bad Gateway</h1></center>\r\n" \
+          "<hr><center>nginx/1.12.1</center>\r\n" \
+          "</body>\r\n</html>\r\n"
       }
 
       it "raises an exception" do
