@@ -20,7 +20,7 @@ module All3DP
 
     private
 
-    BASE_URL = "https://api.craftcloud3d.com"
+    BASE_URL = "https://customer-api.craftcloud3d.com"
     private_constant :BASE_URL
 
     def response_body(response)
@@ -39,7 +39,6 @@ module All3DP
       uri = URI.parse(url)
       request = Net::HTTP::Post.new(uri)
       request.content_type = "application/json; charset=UTF-8"
-      request["use-model-urls"] = "true"
       request.body = JSON.dump(json)
       req_options = { use_ssl: uri.scheme == "https" }
 

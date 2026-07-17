@@ -1,5 +1,8 @@
 # unreleased
 
+Feature:
+- Use the new `customer-api.craftcloud3d.com` endpoint.
+
 # v1.0.1
 
 Fix:

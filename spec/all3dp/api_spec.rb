@@ -13,12 +13,11 @@ RSpec.describe All3DP::API do
     }
 
     it "returns a response" do
-      stub_request(:post, "https://api.craftcloud3d.com/configuration")
+      stub_request(:post, "https://customer-api.craftcloud3d.com/configuration")
         .with(
           body: '{"items":[{"modelUrl":"http://example.org/file.stl"}]}',
           headers: {
             "Content-Type" => "application/json; charset=UTF-8",
-            "Use-Model-Urls" => "true",
           },
         )
         .to_return(
@@ -40,7 +39,10 @@ RSpec.describe All3DP::API do
       }
 
       it "raises an exception" do
-        stub_request(:post, "https://api.craftcloud3d.com/configuration")
+        stub_request(
+          :post,
+          "https://customer-api.craftcloud3d.com/configuration",
+        )
           .to_return(status: 502, body: body)
 
         expect { result }
@@ -50,7 +52,10 @@ RSpec.describe All3DP::API do
 
     context "when 503" do
       it "raises an exception" do
-        stub_request(:post, "https://api.craftcloud3d.com/configuration")
+        stub_request(
+          :post,
+          "https://customer-api.craftcloud3d.com/configuration",
+        )
           .to_return(status: 503, body: "")
 
         expect { result }
@@ -60,7 +65,10 @@ RSpec.describe All3DP::API do
 
     context "when 504" do
       it "raises an exception" do
-        stub_request(:post, "https://api.craftcloud3d.com/configuration")
+        stub_request(
+          :post,
+          "https://customer-api.craftcloud3d.com/configuration",
+        )
           .to_return(status: 504, body: "")
 
         expect { result }.to raise_error(All3DP::API::GatewayTimeoutError, "")
@@ -72,7 +80,10 @@ RSpec.describe All3DP::API do
       let(:body) { "meh" }
 
       it "raises an exception" do
-        stub_request(:post, "https://api.craftcloud3d.com/configuration")
+        stub_request(
+          :post,
+          "https://customer-api.craftcloud3d.com/configuration",
+        )
           .to_return(status: status_code, body: body)
 
         expect { result }
