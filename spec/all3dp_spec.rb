@@ -2,6 +2,6 @@
 
 RSpec.describe All3DP do
   it "has a version number" do
-    expect(All3DP::VERSION).not_to be nil
+    expect(All3DP::VERSION).not_to be_nil
   end
 end

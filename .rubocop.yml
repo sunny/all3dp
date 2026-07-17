@@ -1,11 +1,31 @@
-AllCops:
-  TargetRubyVersion: 2.4
+plugins:
+  - rubocop-rake
+  - rubocop-rspec
 
-Style/StringLiterals:
-  EnforcedStyle: double_quotes
+AllCops:
+  TargetRubyVersion: 3.3
+  NewCops: enable
+
+Bundler/OrderedGems:
+  Enabled: false
 
 Gemspec/OrderedDependencies:
   Enabled: false
+
+RSpec/ExampleLength:
+  Max: 20
+
+RSpec/MultipleExpectations:
+  Enabled: false
+
+RSpec/SpecFilePathFormat:
+  CustomTransform:
+    RuboCop: rubocop
+    RSpec: rspec
+    All3DP: all3dp
+
+Style/StringLiterals:
+  EnforcedStyle: double_quotes
 
 Style/TrailingCommaInArrayLiteral:
   EnforcedStyleForMultiline: consistent_comma
