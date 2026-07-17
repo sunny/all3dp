@@ -7,12 +7,11 @@ RSpec.describe All3DP::Configuration do
     let(:model_urls) { ["http://example.org/file.stl"] }
 
     it "returns a Configuration" do
-      stub_request(:post, "https://api.craftcloud3d.com/configuration")
+      stub_request(:post, "https://customer-api.craftcloud3d.com/configuration")
         .with(
           body: '{"items":[{"modelUrl":"http://example.org/file.stl"}]}',
           headers: {
             "Content-Type" => "application/json; charset=UTF-8",
-            "Use-Model-Urls" => "true",
           },
         )
         .to_return(
